@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import controller from './user.controller'
+import controller from './lead.controller'
 
 export default () => {
   let thing = Router()
