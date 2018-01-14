@@ -1,4 +1,5 @@
 import Lead from './lead.model'
+<<<<<<< HEAD
 import File from './file.model'
 import checkit from 'checkit'
 
@@ -6,6 +7,12 @@ exports.index = (req, res) => {
   Lead.findAll({}, {
     withRelated: ['files']
   })
+=======
+import checkit from 'checkit'
+
+exports.index = (req, res) => {
+  Lead.findAll()
+>>>>>>> 2c9ec90... cors and capture basic lead details
     .then((leads) => {
       res.json(leads)
     })
@@ -23,6 +30,7 @@ exports.create = (req, res) => {
       console.log(err)
       res.status(500).json(err)
     })
+<<<<<<< HEAD
 }
 
 exports.uploadDocument = (req, res) => {
@@ -42,3 +50,6 @@ exports.uploadDocument = (req, res) => {
       res.status(500).json(err)
     })
 }
+=======
+}
+>>>>>>> 2c9ec90... cors and capture basic lead details
