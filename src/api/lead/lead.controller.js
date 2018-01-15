@@ -3,7 +3,9 @@ import File from './file.model'
 import checkit from 'checkit'
 
 exports.index = (req, res) => {
-  Lead.findAll()
+  Lead.findAll({}, {
+    withRelated: ['files']
+  })
     .then((leads) => {
       res.json(leads)
     })
@@ -27,6 +29,7 @@ exports.uploadDocument = (req, res) => {
   let file = req.file
   delete file.fieldname
   file.type = req.query.type ? req.query.type : 'other'
+  file.userId = req.params.id
   File.create(file)
     .then((file) => {
       res.json(file)

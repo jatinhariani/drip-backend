@@ -9,6 +9,7 @@ exports.up = (knex, Promise) => {
     table.string('filename').notNullable()
     table.string('path').notNullable()
     table.integer('size').notNullable()
+    table.integer('userId').unsigned().references('leads.id')
     table.dateTime('createdAt').notNullable()
     table.dateTime('updatedAt').nullable()
   })

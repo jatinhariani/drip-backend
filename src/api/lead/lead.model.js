@@ -1,4 +1,5 @@
 import model from '../../model'
+import File from './file.model'
 import checkit from 'checkit'
 
 const Lead = model.extend({
@@ -9,6 +10,9 @@ const Lead = model.extend({
   },
   validateSave: function () {
     return checkit(this.rules).run(this.attributes)
+  },
+  files: function () {
+    return this.hasMany(File, 'userId')
   },
   rules: {
     name: ['required', 'string', 'maxLength:100'],
