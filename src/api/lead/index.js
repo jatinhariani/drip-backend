@@ -2,11 +2,8 @@ import { Router } from 'express'
 import multer from 'multer'
 
 import controller from './lead.controller'
-<<<<<<< HEAD
 
 const upload = multer({ dest: 'uploads/' })
-=======
->>>>>>> 2c9ec90... cors and capture basic lead details
 
 export default () => {
   let thing = Router()
